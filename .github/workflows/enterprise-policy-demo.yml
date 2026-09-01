@@ -1,0 +1,21 @@
+name: Enterprise policy demo
+
+# Placeholder workflow demonstrating GitHub Enterprise-level controls
+# relevant to Codespaces as a "DevBox" solution: CI running org-approved
+# actions, secrets scoped by environment, and audit-loggable events.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  policy-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm enterprise context
+        run: |
+          echo "This workflow demonstrates that repo/org activity (including"
+          echo "Codespaces creation/deletion) is auditable at the GitHub"
+          echo "Enterprise level, and that Actions/Codespaces policies can be"
+          echo "centrally managed for the enterprise."

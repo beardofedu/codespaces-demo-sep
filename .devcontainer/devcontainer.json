@@ -1,0 +1,53 @@
+{
+  "name": "codespaces-demo-sep",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+
+  // Hardware profile: pins the default machine type users get when this repo's
+  // codespace is created. Org admins can further restrict which machine types
+  // (2-core through 32-core) are selectable at the org level.
+  // See: https://docs.github.com/en/enterprise-cloud@latest/codespaces/managing-codespaces-for-your-organization/restricting-access-to-machine-types
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb",
+    "storage": "32gb"
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  // GitHub Copilot support: preinstall the Copilot extension for VS Code /
+  // Copilot CLI so it's ready the moment the codespace boots.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ]
+    }
+  },
+
+  // Claude Code support: any third-party CLI agent installs like a normal
+  // dev tool via postCreateCommand — it is not a native GitHub integration
+  // the way Copilot is, but Codespaces places no restriction on running it.
+  "postCreateCommand": "bash scripts/postCreate.sh",
+
+  "forwardPorts": [4000],
+  "portsAttributes": {
+    "4000": {
+      "label": "Internal API / AI Gateway demo",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "remoteEnv": {
+    "AI_GATEWAY_URL": "http://localhost:4000/ai-gateway",
+    "INTERNAL_API_URL": "http://localhost:4000/internal-api"
+  }
+}
