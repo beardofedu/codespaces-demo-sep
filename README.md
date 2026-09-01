@@ -15,6 +15,9 @@ enterprise "DevBox" solution**.
 | **Access to GitHub Enterprise** (confirmed) | `.github/workflows/enterprise-policy-demo.yml` — org/enterprise policy & audit log context |
 | **Support for different hardware profiles** (confirmed) | `hostRequirements` in `.devcontainer/devcontainer.json`; org admins can also [restrict available machine types](https://docs.github.com/en/enterprise-cloud@latest/codespaces/managing-codespaces-for-your-organization/restricting-access-to-machine-types) |
 
+See [scripts/README.md](scripts/README.md) for a detailed breakdown of what
+each script does.
+
 ## Try it
 
 1. Click **Code → Codespaces → Create codespace on main**.
