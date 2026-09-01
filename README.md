@@ -1,7 +1,7 @@
-# Codespaces DevBox Demo — ConocoPhillips
+# Codespaces DevBox Demo
 
-This repo is a working demo environment configured to touch on the specific
-evaluation points ConocoPhillips raised about using **GitHub Codespaces as an
+This repo is a working demo environment configured to touch on specific
+evaluation points raised about using **GitHub Codespaces as an
 enterprise "DevBox" solution**.
 
 ## Talking points covered
@@ -27,7 +27,7 @@ enterprise "DevBox" solution**.
 3. Open Copilot Chat in the editor, or run `gh copilot suggest "..."`.
 4. Try installing/running `claude` (Claude Code) — it works like any CLI tool.
 
-## Notes for the ConocoPhillips conversation
+## Notes for the conversation
 
 - Internal API / AI Gateway access in a real deployment depends on their
   network topology (VPN, private endpoints, or SSH tunneling into

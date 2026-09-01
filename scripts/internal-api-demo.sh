@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Demonstrates reaching an "internal API" from inside a codespace.
 #
-# In a real ConocoPhillips deployment this would instead be a private
+# In a real enterprise deployment this would instead be a private
 # endpoint reachable via:
 #   - a VPN / private network connection into the codespace, or
 #   - an SSH/port-forward tunnel to an on-prem or VPC-only service.
